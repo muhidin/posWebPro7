@@ -21,22 +21,22 @@
                 </div>
             </div>
         </div>
-        ​
+
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card">
-                            <div class="card-header with-border">
-                                <h3 class="card-title">Tambah Kategori</h3>
+                            <div class="card-header">
+                                <h3>Tambah Kategori</h3>
                             </div>
-                            <div class="card-body">
-                                @if (session('error'))
+                            @if (session('error'))
+                                <div class="card-body">
                                     <div class="alert alert-danger alert-dismissible">
                                         {!! session('error') !!}
                                     </div>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                             ​
                             <form role="form" action="{{ route('categories.store') }}" method="POST">
                                 @csrf
@@ -60,18 +60,18 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header with-border">
-                                <h3 class="card-title">Daftar Kategori</h3>
+                            <div class="card-header">
+                                <h3>Daftar Kategori</h3>
                             </div>
-                            <div class="card-body">
-                                @if (session('error'))
+                            @if (session('success'))
+                                <div class="card-body">
                                     <div class="alert alert-success alert-dismissible">
                                         {!! session('success') !!}
                                     </div>
-                                @endif
-                            </div>
+                                </div>
+                            @endif
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-hover table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <td>No</td>
@@ -87,7 +87,7 @@
                                                 <td>{{ $row->name }}</td>
                                                 <td>{{ $row->description }}</td>
                                                 <td>
-                                                    <form action="{{ route('categories.destroy', $row->id) }}" method="POST">
+                                                    <form action="{{ route('categories.destroy', $row->id) }} " onsubmit="return confirm('Apakah Anda Yakin ?');" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <a href="{{ route('categories.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
