@@ -1,2 +1,9 @@
 # POS (Point Of Sale)
-## for WebPro 7
+## Tugas1 WebPro 7
+- Install
+- Migration
+- Seeder
+- Model
+
+## Tugas2 - Template
+- template AdminLTE 3.2.0
