@@ -10,13 +10,21 @@
 
 ## Cara Menggunakan Aplikasi
 1. Duplikat code dengan perintah clone.
-```git clone https://github.com/muhidin/posWebPro7.git```
+```
+git clone https://github.com/muhidin/posWebPro7.git
+```
 2. Masuk ke folder kerja dengan perintah.
-`cd /posWebPro7`
+```
+cd /posWebPro7
+```
 3. Install vendor dan lain yang dibutuhkan dengan perintah.
-`composer install`
+```
+composer install
+```
 4. duplikat .env.example dengan perintah.
-`cp .env.example .env`
+```
+cp .env.example .env
+```
 5. Sesuaikan isi .env dengan informasi DB dan Password yang, misalnya.
 ```bash
 APP_NAME="WebPro 7 POS"
